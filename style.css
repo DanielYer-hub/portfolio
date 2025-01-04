@@ -486,7 +486,32 @@ i {
     }
     #intro  .file .nxt{
         margin: 20px 0 20px 0;
-        
+    }
+}
+@media screen and (max-width:391px),(max-height:722px){
+    .navbar .logo a {
+        padding: 0 10px 0 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .navbar .toggle_btn{
+        padding: 0 20px 0 10px;
+    }
+    #intro .avatar img{
+        transform: translateX(70px);
+    }
+    #intro .content{
+        top: 270px;
+        font-size: 15px;
+    }
+    #intro  .file{
+        transform: translateY(50px);
+        left: 20px; 
+        display: block;
+        position: none;
+    }
+    #intro  .file .nxt{
+        margin: 20px 0 20px 0;
     }
 }
 
