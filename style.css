@@ -1,0 +1,535 @@
+body{
+    margin: 0;
+    background-color: #000000;
+    color: #000000;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Hallowed Grounds';
+    font-size: 1.3rem;   
+}
+a:hover{
+    color: rgba(207, 49, 28, 0.863);
+    transition: all 0.5s ease-in-out;
+}
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 0 30px 0 rgb(55, 55, 56);
+
+    transform: translateY(-100%);
+    opacity: 0;
+    animation: slideDown 1s ease-out 5s forwards;
+}
+.navbar .logo a {
+    padding: 0 100px 0 100px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.navbar .links{
+    padding: 0 100px 0 100px;
+    display: flex;
+    gap: 2rem;
+}
+.navbar .toggle_btn{
+    padding: 0 100px 0 100px;
+    color: #000000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/*------------Dropdown menu------------*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background: rgba(255, 255, 255, 0.767);
+    backdrop-filter:blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+    .dropdown_menu.open{
+    height: 185px;
+}
+    .dropdown_menu li{
+     padding: 0.7rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+/*------------ Start PAGE section/Animation -------------*/
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+/* .banner .content {
+    text-align: center;
+    z-index: 1;
+} */
+.banner .content .title{
+    font-family: 'Hallowed Grounds';
+    font-size: 6em;
+    text-align: center;
+}
+.banner::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(image/back.png);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    mask-image: url(image/ezgif-2-e7763cfe76.gif);
+    mask-size: cover;
+    mask-position: center;
+}
+.content p{
+    font-size: 1.3em;
+    text-align: center;
+}
+.content li{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(
+    to right, rgb(109, 82, 82), 
+    rgb(223, 117, 47));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+    width: 0;
+    animation: typing 4s steps(30, end) forwards, blink 0.6s step-end infinite;
+    animation-delay: 5s;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink {
+    from { border-color: rgba(0, 0, 0, 0.5); }
+    to { border-color: transparent; }
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+i {
+    margin-left: 8px;
+}
+/* ------ Section About------ */
+.tab{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-image: url(image/back.png);
+}
+.tab .container{
+    width: 1140px;
+    max-width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+}
+#intro{
+    background-color: #16222D;
+}
+#intro .avatar{
+    text-align: right;
+    height: 100%;
+}
+#intro .avatar img{
+    height: 100%;
+    filter: saturate(0.5);
+}
+#intro .content{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    width: 500px;
+    max-width: 80%;
+    font-size: 25px;
+}
+#intro .content span{
+    font-weight: 900; 
+    font-family: 'Hallowed Grounds';
+    background-image: linear-gradient(
+        to right, rgb(109, 82, 82), 
+                  rgb(223, 117, 47));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+#intro .content i{
+    font-size: 7em;
+    color: #8b939b69;
+    position: absolute;
+    top: -50px;
+    right: -150px;
+}
+#intro .file{
+    display: flex;
+    position: relative;
+    top: -250px;
+    right: -50px;  
+}
+#intro .file .cv {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+    background: linear-gradient(
+    to right,
+    rgb(109, 82, 82), 
+    rgb(223, 117, 47));
+    border-radius: 20px;
+    border: 1px solid rgba(114, 55, 47, 0.863);
+} 
+#intro .file .cv :hover{
+      background: rgba(167, 167, 167, 0.473);
+      transition: all 1000ms ease;
+}
+#intro .file .nxt{
+        margin: 10px 20px;
+        background-image: linear-gradient(
+        to right, rgb(109, 82, 82), 
+        rgb(223, 117, 47));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+/*-----Section Skills----*/
+#skills .list{
+    height: 100%;
+    width: max-content;
+    display: flex;
+    justify-content: left;
+    padding-left: 50px;
+    box-sizing: border-box;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}  
+#skills .list .item{
+    width: 200px;
+    flex-shrink: 0;
+    display: grid;
+    grid-template-rows: 1fr 50px 1fr;
+    gap: 20px;  
+}
+#skills .list .item i{
+    background-color: #444B57;
+    width: 50px;
+    font-size: 2em;
+    color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#skills .list .item .module{
+    font-size: large;
+    display: flex;
+    align-items: end;
+    background-image: linear-gradient(
+        to right, rgb(109, 82, 82), 
+        rgb(223, 117, 47));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+#skills .list .item .content .inform{
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+#skills .list .item:nth-child(odd) .content{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+#skills .list .item:nth-child(odd) .module{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    align-items: start;
+}
+#skills .list::before{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #444B57;
+    content: '';
+    z-index: -1;
+}
+#skills .container{
+    overflow: auto;
+    
+}
+/*-----Project Section-----*/
+#gallery .list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 50px;
+}
+#gallery .list .item img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+#gallery .list .item{
+    border-radius: 30px;
+    border-color: rgba(0, 0, 0, 0.438);
+    border-style: solid;
+    background-color: #dfe0e2;
+    overflow: hidden;
+    position: relative;
+}
+#gallery .list .item .index{
+    font-weight: bold;
+    font-size: 1.5em;
+    position: absolute;
+    transform: translateY(-106%);
+    background-color:  #dfe0e2;
+    padding: 10px;
+    font-style: italic;
+    border-top-right-radius: 20px;
+}
+#gallery .list .item .name{
+    font-weight: bold;
+    font-size: large;
+    padding: 10px;
+}
+#gallery .list .item .des{
+    padding: 0 10px 10px 10px;
+    font-size: small;
+}
+#gallery .list .item .author{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+#gallery .list .item .author a{
+    margin: 0 20px 0 20px;
+}
+#gallery .container{
+    overflow: auto;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+/*-----End Section-----*/
+#contact .thank{
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    background-image: linear-gradient(
+        to right, rgb(109, 82, 82), 
+                  rgb(223, 117, 47));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+#contact .container{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+#contact .des{
+    width: 500px;
+    max-width: 80%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+#contact .des a{
+    background-image: linear-gradient(
+        to right, rgb(109, 82, 82), 
+                  rgb(223, 117, 47));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+#contact .item{
+    display: table-caption;
+}
+#contact .item label{
+    font-weight: 700;
+}
+#contact .item input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid black; 
+    background-color: #fafafa80;
+}
+#contact .item #field{
+    height: 90px;
+}
+#contact .item input[type=submit]{
+    font-size: 20px;
+    max-width: 50%;
+    background: linear-gradient(
+    to right,
+    rgb(109, 82, 82), 
+    rgb(223, 117, 47));
+    color: #fafafa;
+}
+
+/*-----Responsiver Style----*/
+@media (max-width:992px){
+    .navbar .links{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+}
+@media (max-width:576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+    .navbar .toggle_btn{
+        padding: 0 50px 0 50px;
+    }
+}
+@media (max-width:460px){
+    .navbar .toggle_btn{
+        padding: 0 20px 0 20px;
+    }
+}
+@media screen and (max-width: 991px){
+    #intro .avatar img{
+        transform: translateX(200px);
+    }
+}
+@media screen and (max-width: 767px){
+    body{
+        font-size: 10px;
+    }
+    header nav a{
+        margin: 10px;
+    }
+    #intro .avatar img{
+        transform: translateX(230px);
+    }
+    #intro .content{
+        left: 20px;
+        font-size: 22px;
+    }
+    #intro .content i{
+        position: unset;
+    }
+    #intro  .file{
+        transform: translateY(100px);
+        left: 20px;
+    }
+    #gallery .list{
+        padding: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+    #gallery .list .item img{
+        height: 100px;
+    }
+}
+@media screen and (max-width: 451px){
+    #intro .avatar img{
+        transform: translateX(30px);
+    }
+    #intro .content{
+        top: 300px;
+        font-size: 17px;
+    }
+    #intro  .file{
+        transform: translateY(-80px);
+        left: 20px; 
+        display: block;
+        position: none;
+    }
+    #intro  .file .nxt{
+        margin: 20px 0 20px 0;
+        
+    }
+}
+
+#main {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+}
+.tab {
+    position: fixed;
+    inset: 0;
+    visibility: hidden;
+    opacity: 0;
+    clip-path: circle(0 at var(--x) var(--y));
+    z-index: -1;
+    transition: clip-path 8s ease-in-out, visibility 0s linear 3s, opacity 5s ease-in-out;
+}
+.tab.active {
+    visibility: visible;
+    opacity: 1;
+    clip-path: circle(200% at var(--x) var(--y));
+    z-index: 10;
+    transition: clip-path 1s ease-in-out, opacity 1s ease-in-out;
+}
+@keyframes showTab{
+    to{
+        clip-path: circle(
+            200% at var(--x) var(--y)
+        );
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
